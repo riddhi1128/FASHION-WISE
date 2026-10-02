@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fashion-wise | Let's style you wisely.</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3e1420">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233e1420'/%3E%3Ccircle cx='32' cy='18' r='5' fill='none' stroke='%23f3e6e2' stroke-width='3'/%3E%3Cpath d='M32 23 L32 27 M10 46 L32 27 L54 46 M10 46 L54 46' fill='none' stroke='%23f3e6e2' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --maroon-dark:#3e1420; --maroon:#8c3346; --maroon-light:#d9a3ac;
+  --cream:#faf3f0; --ink:#2a1216; --mute:#7a6468; --line:#e9dcd9;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+a{color:inherit}
+
+.topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+  padding:14px 16px;background:rgba(250,243,240,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap;gap:8px}
+.brand{font-size:16px;letter-spacing:4px;font-weight:900;margin:0}
+.topbar select{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;background:#fff}
+
+:root{--gold:#c9a876}
+
+.hero{background:var(--cream);padding:28px 16px 0}
+.brandmark{text-align:center;font-size:clamp(40px,9vw,92px);font-weight:900;letter-spacing:1px;
+  color:var(--maroon-dark);margin:0 0 20px;line-height:1}
+.hero-grid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.35fr 1fr;gap:14px}
+.hero-main{position:relative;border-radius:22px;overflow:hidden;min-height:524px;
+  background:linear-gradient(0deg,rgba(40,14,20,.78),rgba(40,14,20,.1) 60%),
+  url('images/man.jpg') 55% 40%/cover no-repeat var(--maroon-dark);
+  display:flex;align-items:flex-end;padding:28px}
+.hero-main .txt{color:#fff;max-width:420px}
+.hero-main .kicker{font-size:12px;font-weight:800;letter-spacing:3px;color:var(--maroon-light);text-transform:uppercase;margin:0 0 10px}
+.hero-main h1{font-size:clamp(32px,5vw,54px);margin:0 0 16px;font-weight:900;line-height:1.08;letter-spacing:-.5px}
+.hero-main p{color:#f3e6e2;font-size:15px;line-height:1.6;margin:0 0 22px;max-width:380px}
+.cta{background:var(--gold);color:var(--maroon-dark);border:0;border-radius:999px;padding:12px 22px;
+  font-size:14px;font-weight:800;cursor:pointer;transition:transform .15s,opacity .2s}
+.cta:hover{opacity:.88}.cta:active{transform:scale(.96)}
+
+.hero-side{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 1fr;gap:14px}
+.feature{position:relative;border-radius:22px;overflow:hidden;min-height:0;cursor:pointer;
+  display:flex;align-items:flex-end;padding:16px;color:#fff;transition:transform .2s;
+  background-color:var(--maroon);background-size:cover;background-repeat:no-repeat;background-position:center}
+.feature:nth-child(1){background-image:linear-gradient(0deg,rgba(40,14,20,.75),rgba(40,14,20,.05) 65%),url('images/woman4.jpg');background-position:50% 45%}
+.feature:nth-child(2){background-image:linear-gradient(0deg,rgba(40,14,20,.75),rgba(40,14,20,.05) 65%),url('images/woman3.jpg');background-position:55% 55%}
+.feature:nth-child(3){background-image:linear-gradient(0deg,rgba(40,14,20,.75),rgba(40,14,20,.05) 65%),url('images/man4.jpg');background-position:65% 30%}
+.feature:hover{transform:translateY(-3px) scale(1.01)}
+.feature:nth-child(2){grid-column:1/-1;order:-1}
+.feature b{display:block;font-size:16px;font-weight:800;line-height:1.2;margin-bottom:4px}
+.feature span{display:block;font-size:12px;line-height:1.4;color:#f3e6e2}
+
+@media (max-width:720px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-main{min-height:400px}
+  .hero-side{grid-template-rows:170px 260px}
+}
+
+main{max-width:760px;margin:0 auto;padding:30px 16px 60px}
+nav{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;margin-bottom:24px;flex-wrap:wrap}
+nav button{flex:1 1 45%;background:none;color:var(--mute);border:0;border-radius:999px;padding:12px 6px;font-size:14px;font-weight:700;cursor:pointer;transition:all .25s}
+nav button.on{background:var(--maroon);color:#fff}
+button{background:var(--maroon);color:#fff;border:0;border-radius:999px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;transition:transform .15s,opacity .2s}
+button:hover{opacity:.88}button:active{transform:scale(.96)}
+button.ghost{background:#fff;color:var(--maroon);border:1px solid var(--maroon)}
+select,input:not([type]){border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:14px;background:#fff;outline:none;transition:border .2s;max-width:100%}
+select:focus,input:focus{border-color:var(--maroon)}
+
+.panel{display:none;animation:up .45s ease}.panel.on{display:block}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card{background:#fff;border:2px solid var(--maroon-dark);border-radius:20px;padding:22px;margin-bottom:20px;box-shadow:6px 6px 0 var(--maroon-light)}
+.card p{color:var(--ink);margin:0 0 16px;font-size:15px;line-height:1.65;font-weight:500}
+.src,.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.pv{max-width:180px;max-height:180px;width:100%;object-fit:cover;border-radius:14px;margin-top:14px;animation:up .4s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:12px}
+figure{margin:0;position:relative;animation:up .4s}figure img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+figcaption{font-size:12px;color:var(--mute);margin-top:4px;text-align:center}
+figure select{width:100%;margin-top:4px;padding:5px 8px;font-size:12px}
+.x{position:absolute;top:6px;right:6px;width:24px;height:24px;padding:0;border-radius:50%;font-size:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:#fff;color:var(--ink);border:1px solid var(--line)}.chip.on{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+h3{font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);margin:28px 0 12px}
+.shop{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px;font-size:15px;font-weight:600}.shop span{min-width:140px}
+.shop a{color:var(--maroon);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;text-decoration:none;transition:all .2s}
+.shop a:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.reply{white-space:pre-wrap;line-height:1.75;font-size:15px;margin:0 0 14px;animation:up .5s}
+.load{color:var(--mute);animation:pulse 1.2s infinite}@keyframes pulse{50%{opacity:.35}}
+.vogue{display:flex;align-items:center;gap:10px;background:#fff6f0;border:1px dashed var(--maroon-light);
+  border-radius:14px;padding:10px 14px;margin-top:12px;font-size:13px;color:var(--mute)}
+.vogue a{color:var(--maroon);font-weight:600;text-decoration:none}
+.vogue a:hover{text-decoration:underline}
+#cam{position:fixed;inset:0;background:rgba(20,6,10,.9);display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:30}
+#cam.on{display:flex}#cam video{max-width:92%;max-height:70%;border-radius:20px}
+
+.hist-item{display:flex;gap:12px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.hist-item:last-child{border-bottom:0}
+.hist-item img{width:56px;height:56px;object-fit:cover;border-radius:10px;border:1px solid var(--line);flex-shrink:0}
+.hist-item .t{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:1px}
+.hist-item .r{font-size:13px;color:var(--ink);margin-top:2px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{color:var(--mute);font-size:14px}
+
+footer{background:var(--maroon-dark);color:#e3cfd0;padding:36px 16px 20px;margin-top:40px}
+.foot-inner{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-brand b{color:#fff;font-size:15px;letter-spacing:2px}
+.foot-brand p{font-size:13px;color:#cba9ac;max-width:260px;margin:8px 0 0}
+.foot-cols{display:flex;gap:40px;flex-wrap:wrap}
+.foot-col div{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#cba9ac;margin-bottom:10px}
+.foot-col a{display:block;font-size:13px;color:#f3e6e2;text-decoration:none;margin-bottom:8px;opacity:.85}
+.foot-col a:hover{opacity:1;text-decoration:underline}
+.foot-bottom{max-width:760px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);
+  font-size:12px;color:#b4898d;text-align:center}
+
+@media (max-width:560px){
+  .feature-row{grid-template-columns:1fr}
+  .feature{text-align:center}
+  nav button{flex:1 1 100%}
+  .topbar{justify-content:center;text-align:center}
+  .shop span{min-width:100%}
+}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,.feature:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:560px){button,select,input:not([type]){min-height:44px}}
+</style></head><body>
+
+<div class="topbar"><p class="brand">FASHION-WISE</p>
+  <select id="gender"><option value="any">Shop: Any</option><option value="women">Women</option><option value="men">Men</option></select>
+</div>
+
+<section class="hero">
+  <h2 class="brandmark">FASHION-WISE</h2>
+  <div class="hero-grid">
+    <div class="hero-main">
+      <div class="txt">
+        <p class="kicker">CNN + RAG stylist</p>
+        <h1>Let's style you wisely.</h1>
+        <p>Photograph a piece, your whole wardrobe, or an outfit you love — get a styled look built from what you own.</p>
+        <button class="cta" id="heroCta">Start styling</button>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="feature" data-t="item"><b>Style an item</b><span>One photo, instant pairing ideas</span></div>
+      <div class="feature" data-t="wd"><b>My wardrobe</b><span>Catalogue what you own</span></div>
+      <div class="feature" data-t="inspo"><b>Style me like this</b><span>Recreate a look you found</span></div>
+    </div>
+  </div>
+</section>
+
+<main>
+<nav>
+  <button class="on" data-t="item">Style an item</button>
+  <button data-t="wd">My wardrobe</button>
+  <button data-t="inspo">Style me like this</button>
+  <button data-t="hist">Past styles</button>
+</nav>
+
+<section class="panel on" id="item"><div class="card"><p>Photo of one top, bottom, dress, shoes or jacket. Get pairing ideas and where to buy.</p><div id="itemSrc"></div><div id="itemOut"></div></div></section>
+
+<section class="panel" id="wd"><div class="card"><p>Add photos of your clothes. They stay on this device only.</p><div id="wdSrc"></div><div class="row"><button class="ghost" id="clearWd">Clear wardrobe</button></div></div><div class="grid" id="wdGrid"></div></section>
+
+<section class="panel" id="inspo"><div class="card">
+  <p>Upload an outfit you like. We build it from your wardrobe and tell you what to buy.</p>
+  <div class="vogue">Need inspiration first? <a href="https://www.vogue.com/fashion" target="_blank" rel="noopener">Browse looks on Vogue</a> &mdash; screenshot one, then upload it here.</div>
+  <div id="inSrc"></div><div id="inOut"></div>
+</div></section>
+
+<section class="panel" id="hist"><div class="card"><p>Every look you've styled, saved on this device.</p><div id="histList"></div><div class="row"><button class="ghost" id="clearHist">Clear history</button></div></div></section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand"><b>FASHION-WISE</b><p>A CNN classifies what you photograph, RAG grounds the styling advice in real guidance, and a chatbot ties it together.</p></div>
+    <div class="foot-cols">
+      <div class="foot-col"><div>Tool</div>
+        <a data-t="item" href="#">Style an item</a>
+        <a data-t="wd" href="#">My wardrobe</a>
+        <a data-t="inspo" href="#">Style me like this</a>
+        <a data-t="hist" href="#">Past styles</a>
+      </div>
+      <div class="foot-col"><div>Made by</div>
+        <span style="display:block;font-size:13px;color:#f3e6e2;margin-bottom:8px">Riddhi Bhatt</span>
+        <a href="mailto:riddhiii.works@gmail.com">riddhiii.works@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">Fashion-wise &mdash; Let's style you wisely. Shop links are searches on each store, not guaranteed exact matches.</div>
+</footer>
+
+<div id="cam"><video autoplay playsinline></video><div class="row"><button id="snap">Take photo</button><button class="ghost" id="flip">Flip camera</button><button class="ghost" id="close">Cancel</button></div></div>
+<script>
+const API=location.protocol.startsWith("http")?location.origin:"http://127.0.0.1:8000";
+const CATS=["dress","hat","longsleeve","outwear","pants","shirt","shoes","shorts","skirt","t-shirt"];
+const sid="s"+Math.random().toString(36).slice(2);
+const $=s=>document.querySelector(s);
+const h=(t,a={},...c)=>{const e=document.createElement(t);for(const k in a){if(k==="on")for(const n in a.on)e.addEventListener(n,a.on[n]);else e[k]=a[k]}c.flat().forEach(x=>e.append(x));return e};
+let wardrobe=JSON.parse(localStorage.getItem("wd")||"[]");
+let history=JSON.parse(localStorage.getItem("history")||"[]");
+const save=()=>{try{localStorage.setItem("wd",JSON.stringify(wardrobe))}catch(e){alert("Storage full. Remove some items.")}};
+const saveHist=()=>{try{localStorage.setItem("history",JSON.stringify(history.slice(0,60)))}catch(e){}};
+const loading=t=>h("p",{className:"load",textContent:t||"Thinking..."});
+const catSel=v=>{const s=h("select");CATS.forEach(c=>s.append(h("option",{value:c,textContent:c,selected:c===v})));return s};
+
+function goTab(t){
+ document.querySelectorAll("nav button,.panel").forEach(x=>x.classList.remove("on"));
+ document.querySelector(`nav button[data-t="${t}"]`).classList.add("on");
+ $("#"+t).classList.add("on");
+ $("main").scrollIntoView({behavior:"smooth"});
+ if(t==="hist")drawHist();
+}
+document.querySelectorAll("nav button, footer [data-t]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();goTab(el.dataset.t)}));
+document.querySelectorAll(".feature[data-t]").forEach(el=>el.addEventListener("click",()=>goTab(el.dataset.t)));
+$("#heroCta").onclick=()=>$("main").scrollIntoView({behavior:"smooth"});
+
+let stream=null,facing="environment",lastCb=null;
+async function camera(cb){lastCb=cb;
+ try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:facing}})}catch(e){return alert("Camera not available, or permission was denied. Use Upload instead. (On a phone, the page must be opened over HTTPS.)")}
+ const v=$("#cam video");v.srcObject=stream;$("#cam").classList.add("on");
+ $("#snap").onclick=()=>{const c=document.createElement("canvas");c.width=v.videoWidth;c.height=v.videoHeight;c.getContext("2d").drawImage(v,0,0);
+  c.toBlob(b=>{stopCam();cb(new File([b],"cam.jpg",{type:"image/jpeg"}))},"image/jpeg",.9)};
+}
+function stopCam(){if(stream)stream.getTracks().forEach(t=>t.stop());$("#cam").classList.remove("on")}
+$("#close").onclick=stopCam;
+$("#flip").onclick=()=>{facing=facing==="environment"?"user":"environment";if(stream)stream.getTracks().forEach(t=>t.stop());camera(lastCb)};
+function source(cb,multi){
+ const inp=h("input",{type:"file",accept:"image/*",multiple:!!multi,hidden:true,on:{change:()=>{if(inp.files.length)cb([...inp.files]);inp.value=""}}});
+ return h("div",{className:"src"},inp,h("button",{textContent:"Upload",on:{click:()=>inp.click()}}),h("button",{className:"ghost",textContent:"Use camera",on:{click:()=>camera(f=>cb([f]))}}));
+}
+const thumb=f=>new Promise(r=>{const i=new Image();i.onload=()=>{const s=220/Math.max(i.width,i.height),c=document.createElement("canvas");c.width=i.width*s;c.height=i.height*s;c.getContext("2d").drawImage(i,0,0,c.width,c.height);r(c.toDataURL("image/jpeg",.7))};i.src=URL.createObjectURL(f)});
+async function analyze(f){const fd=new FormData();fd.append("file",f);try{return await (await fetch(API+"/analyze",{method:"POST",body:fd})).json()}catch(e){return null}}
+async function post(p,b){try{return await (await fetch(API+p,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)})).json()}catch(e){return{matches:[],shop:[],reply:"Could not reach the server. Is it running?"}}}
+const wd=()=>wardrobe.map(({id,category,color})=>({id,category,color}));
+
+async function shareResult(title,text,imgDataUrl){
+ try{
+  if(navigator.share){
+   let files=[];
+   if(imgDataUrl && navigator.canShare){
+    const blob=await (await fetch(imgDataUrl)).blob();
+    const file=new File([blob],"look.jpg",{type:"image/jpeg"});
+    if(navigator.canShare({files:[file]}))files=[file];
+   }
+   await navigator.share(files.length?{title,text,files}:{title,text});
+  }else{
+   await navigator.clipboard.writeText(text);
+   alert("Sharing isn't supported on this browser, so the advice was copied instead.");
+  }
+ }catch(e){}
+}
+
+function addHistory(entry){history.unshift({...entry,ts:Date.now()});saveHist()}
+
+function drawHist(){
+ const list=$("#histList");
+ if(!history.length){list.replaceChildren(h("p",{className:"empty",textContent:"Nothing styled yet. Try the other tabs first."}));return}
+ list.replaceChildren(...history.map(e=>{
+  const row=h("div",{className:"hist-item"},
+   e.img?h("img",{src:e.img}):h("div",{style:"width:56px;height:56px"}),
+   h("div",{},h("div",{className:"t"},new Date(e.ts).toLocaleDateString()+" \u00b7 "+e.mode),h("div",{className:"r",textContent:e.reply})));
+  row.onclick=()=>{ const res=h("div"); $("#histList").replaceChildren(h("button",{className:"ghost",textContent:"Back to list",onclick:drawHist}),res); render(res,e,e.base,e.img); };
+  return row;
+ }));
+}
+
+function render(box,d,base,imgDataUrl){
+ const inp=h("input",{placeholder:"Ask a follow-up..."}),thread=h("div");
+ const ask=async()=>{const m=inp.value.trim();if(!m)return;inp.value="";thread.append(h("p",{className:"reply",textContent:"You: "+m}));const w=loading();thread.append(w);
+  const r=await post("/chat",{session_id:sid,message:m,predicted_class:base,confidence:.9});w.replaceWith(h("p",{className:"reply",textContent:r.reply||"Something went wrong."}))};
+ inp.onkeydown=e=>{if(e.key==="Enter")ask()};
+ const shareBtn=h("button",{className:"ghost",textContent:"Share",onclick:()=>shareResult("Fashion-wise",d.reply,imgDataUrl)});
+ box.replaceChildren(
+  d.matches && d.matches.length?h("div",{},h("h3",{textContent:"From your wardrobe"}),h("div",{className:"grid"},d.matches.map(m=>{const w=wardrobe.find(x=>x.id===m.id);return h("figure",{},h("img",{src:w?w.img:""}),h("figcaption",{textContent:m.slot}))}))):"",
+  d.shop && d.shop.length?h("div",{},h("h3",{textContent:"Where to buy"}),d.shop.map(s=>h("div",{className:"shop"},h("span",{textContent:s.label}),Object.entries(s.links).map(([n,u])=>h("a",{href:u,target:"_blank",rel:"noopener",textContent:n}))))):"",
+  h("h3",{textContent:"Stylist"}),h("p",{className:"reply",textContent:d.reply}),h("div",{className:"row"},shareBtn),thread,h("div",{className:"row"},inp,h("button",{textContent:"Send",onclick:ask})));
+}
+
+$("#itemSrc").append(source(async([f])=>{
+ const out=$("#itemOut");out.replaceChildren(loading("Looking at your photo..."));
+ const a=await analyze(f);if(!a)return out.replaceChildren(h("p",{textContent:"Could not reach the server."}));
+ const sel=catSel(a.top[0].category),col=h("input",{value:a.colors[0]||""}),res=h("div"),img=await thumb(f);
+ const go=async()=>{res.replaceChildren(loading());
+  const d=await post("/style",{mode:"item",category:sel.value,color:col.value,wardrobe:wd(),gender:$("#gender").value});
+  render(res,d,sel.value,img); addHistory({mode:"item: "+sel.value,base:sel.value,reply:d.reply,matches:d.matches,shop:d.shop,img});
+ };
+ out.replaceChildren(h("img",{src:URL.createObjectURL(f),className:"pv"}),h("div",{className:"row"},sel,col,h("button",{textContent:"Suggest",onclick:go})),res);go();
+}));
+
+function drawWd(){
+ $("#wdGrid").replaceChildren(...wardrobe.map(w=>{const s=catSel(w.category);s.onchange=()=>{w.category=s.value;save()};
+  return h("figure",{},h("img",{src:w.img}),h("button",{className:"x",textContent:"x",onclick:()=>{wardrobe=wardrobe.filter(x=>x!==w);save();drawWd()}}),h("figcaption",{textContent:w.color}),s)}));
+}
+$("#wdSrc").append(source(async files=>{
+ const note=loading("Adding "+files.length+" item(s)...");$("#wdSrc").append(note);
+ for(const f of files){const a=await analyze(f);if(!a)continue;wardrobe.push({id:"w"+Date.now()+Math.random().toString(36).slice(2,6),category:a.top[0].category,color:a.colors[0]||"grey",img:await thumb(f)})}
+ note.remove();save();drawWd();
+},true));drawWd();
+
+$("#inSrc").append(source(async([f])=>{
+ const out=$("#inOut");out.replaceChildren(loading("Looking at the outfit..."));
+ const a=await analyze(f);if(!a)return out.replaceChildren(h("p",{textContent:"Could not reach the server."}));
+ const on=new Set(a.top.filter((t,i)=>i===0||t.confidence>.2).map(t=>t.category)),res=h("div"),img=await thumb(f);
+ const chips=h("div",{className:"chips"},CATS.map(c=>h("button",{className:"chip"+(on.has(c)?" on":""),textContent:c,onclick:e=>{e.target.classList.toggle("on")}})));
+ const go=async()=>{const wanted=[...chips.querySelectorAll(".on")].map(b=>b.textContent);if(!wanted.length)return;res.replaceChildren(loading());
+  const d=await post("/style",{mode:"inspo",wanted,colors:a.colors,wardrobe:wd(),gender:$("#gender").value});
+  render(res,d,wanted[0],img); addHistory({mode:"inspired look",base:wanted[0],reply:d.reply,matches:d.matches,shop:d.shop,img});
+ };
+ out.replaceChildren(h("img",{src:URL.createObjectURL(f),className:"pv"}),h("p",{textContent:"Tap to fix the pieces we think are in this outfit:"}),chips,h("div",{className:"row"},h("button",{textContent:"Style me",onclick:go})),res);
+}));
+document.addEventListener("click",e=>{const a=e.target.closest(".shop a");if(!a)return;e.preventDefault();
+ if(confirm("Open "+a.textContent+" in a new tab or its app?\n"+new URL(a.href).hostname))window.open(a.href,"_blank","noopener")});
+$("#clearWd").onclick=()=>{if(confirm("Remove every wardrobe item from this device?")){wardrobe=[];save();drawWd()}};
+$("#clearHist").onclick=()=>{if(confirm("Delete all saved looks from this device?")){history=[];saveHist();drawHist()}};
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script></body></html>

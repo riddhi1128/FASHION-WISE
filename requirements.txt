@@ -1,0 +1,13 @@
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+tensorflow
+pillow==10.4.0
+numpy
+anthropic==0.39.0
+sentence-transformers==3.2.1
+chromadb==0.5.18
+pydantic==2.9.2
+python-dotenv==1.0.1
+
+
